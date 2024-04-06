@@ -1,0 +1,261 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 7,
+    "passes": 6,
+    "pending": 1,
+    "failures": 0,
+    "testsRegistered": 7,
+    "passPercent": 85.71428571428571,
+    "pendingPercent": 14.285714285714286,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2024-04-04T16:43:13.713Z",
+    "end": "2024-04-04T16:43:37.671Z",
+    "duration": 23958
+  },
+  "results": [
+    {
+      "uuid": "2ef0b020-6ce3-48a2-8155-052a89f4725d",
+      "title": "",
+      "fullFile": "cypress/e2e/sampleTests/fileUploadTest.cy.js",
+      "file": "cypress/e2e/sampleTests/fileUploadTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "023275c0-5a38-43de-aed0-9bc0a1588744",
+          "title": "file upload use case",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "simple file upload",
+              "fullTitle": "file upload use case simple file upload",
+              "timedOut": null,
+              "duration": 3223,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://the-internet.herokuapp.com/upload');\ncy.get('#file-upload').attachFile('test_file.txt');\ncy.get('#file-submit').click();\ncy.get('div>h3').should('be.visible').and('have.text', 'File Uploaded!');",
+              "err": {},
+              "uuid": "848c57c1-a80e-42d5-94f3-a2b4471156e0",
+              "parentUUID": "023275c0-5a38-43de-aed0-9bc0a1588744",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "drag and drop file upload",
+              "fullTitle": "file upload use case drag and drop file upload",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit('https://the-internet.herokuapp.com/upload');\ncy.get('div[id=drag-drop-upload]').click().attachFile('test_file.txt');\ncy.get(\"div[class*='dz-complete']\").contains('div').should('have.class', 'dz-success-mark');",
+              "err": {},
+              "uuid": "76c076cd-3b1e-46af-ab81-ab069359d18c",
+              "parentUUID": "023275c0-5a38-43de-aed0-9bc0a1588744",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "change file name during upload",
+              "fullTitle": "file upload use case change file name during upload",
+              "timedOut": null,
+              "duration": 789,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://the-internet.herokuapp.com/upload');\ncy.get('#file-upload').attachFile({\n  filePath: 'test_file.txt',\n  fileName: 'actual_file.txt'\n});\ncy.get('#file-submit').click();\ncy.get('div>h3').should('be.visible').and('have.text', 'File Uploaded!');",
+              "err": {},
+              "uuid": "53445f18-ef61-4206-aef7-00ddb3086820",
+              "parentUUID": "023275c0-5a38-43de-aed0-9bc0a1588744",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "848c57c1-a80e-42d5-94f3-a2b4471156e0",
+            "53445f18-ef61-4206-aef7-00ddb3086820"
+          ],
+          "failures": [],
+          "pending": [
+            "76c076cd-3b1e-46af-ab81-ab069359d18c"
+          ],
+          "skipped": [],
+          "duration": 4012,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "c4376047-e09a-4abf-a748-34af78a83cc7",
+      "title": "",
+      "fullFile": "cypress/e2e/sampleTests/viewportTest.cy.js",
+      "file": "cypress/e2e/sampleTests/viewportTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6b76ba29-f821-40f5-979c-328baa720071",
+          "title": "testing different view ports",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "open in mb 13",
+              "fullTitle": "testing different view ports open in mb 13",
+              "timedOut": null,
+              "duration": 3573,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport('macbook-13');\ncy.screenshot();\ncy.wait(200);",
+              "err": {},
+              "uuid": "cd9ef720-47e6-4d7f-940f-1e53853b5427",
+              "parentUUID": "6b76ba29-f821-40f5-979c-328baa720071",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "open in mb 15",
+              "fullTitle": "testing different view ports open in mb 15",
+              "timedOut": null,
+              "duration": 2831,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport('macbook-15');\ncy.screenshot();\ncy.wait(200);",
+              "err": {},
+              "uuid": "3066d34f-c253-42a5-a5f5-d7d8f6dcad6c",
+              "parentUUID": "6b76ba29-f821-40f5-979c-328baa720071",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "open in mb 16",
+              "fullTitle": "testing different view ports open in mb 16",
+              "timedOut": null,
+              "duration": 2786,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport('macbook-16');\ncy.screenshot();\ncy.wait(200);",
+              "err": {},
+              "uuid": "4c22aed0-f196-4281-83e8-916fdc2d7fe7",
+              "parentUUID": "6b76ba29-f821-40f5-979c-328baa720071",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "open in ip x",
+              "fullTitle": "testing different view ports open in ip x",
+              "timedOut": null,
+              "duration": 2617,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport('iphone-x');\ncy.screenshot();\ncy.wait(200);",
+              "err": {},
+              "uuid": "016fefd4-5f30-459e-8ae6-0074f45cdd45",
+              "parentUUID": "6b76ba29-f821-40f5-979c-328baa720071",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cd9ef720-47e6-4d7f-940f-1e53853b5427",
+            "3066d34f-c253-42a5-a5f5-d7d8f6dcad6c",
+            "4c22aed0-f196-4281-83e8-916fdc2d7fe7",
+            "016fefd4-5f30-459e-8ae6-0074f45cdd45"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11807,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
