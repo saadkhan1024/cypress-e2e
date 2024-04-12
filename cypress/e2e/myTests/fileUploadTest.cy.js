@@ -1,6 +1,6 @@
 describe('file upload use case', () => {
     it('simple file upload', () => {
-        cy.visit('https://the-internet.herokuapp.com/upload')
+        cy.visit('https://the-internet.herokuapp.com/upload', {timeout: 5000})
         cy.get('#file-upload').attachFile('test_file.txt')
         cy.get('#file-submit').click()
         cy.get('div>h3').should('be.visible').and('have.text', 'File Uploaded!')
